@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>
+	Object-oriented examples
+	</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+/*
+	Steps
+	1. Create person
+	2. Create and assign values to height and age properties
+	3. Create text string for the person
+	4. Display
+	5. Methods: eat (calories property), sleep (sleep property)
+	6. Child methods: grow (height property)
+*/
+
+function names() {
+
+	// Creating me
+	var p = {h:70, age:22};
+	var info = "My height is " + p.h + "inches, and my age is " + p.age;
+	document.getElementById("outputDiv").innerHTML = info;
+	
+	// Creating my friend
+	
+	var p2 = {name: Bob, DOB: 12/15/1994}
+	p2.height = 65;
+	var info2 = "Bob's height: " + p2.height + "inches";
+	document.getElementById("outputDiv2").innerHTML = info2;
+	
+	// Creating the third person
+	
+	function person(h, name, age) {
+		this.height = h;
+		this.id = name;
+		this.howOld = age;
+	}
+		function returnInches(height) {
+			this.height = this.height + height;
+		}
+		
+		// Use this method to increase the person's height and return the new height
+		
+		public int newHeightAfterGrowthByInches(i) {
+			var this.height =+ i;
+			return this.height;
+		}
+	}
+
+	// Creating and assigning (to the document) info about Jake 
+	
+	var p3 = new person(60, Jake, 60);
+	var info3 = "Jake's height: " + p3.height + "inches" + "</br>" +
+					"Jake's name: " + p3.id + "</br>" + "Jake's age: " + p3.howOld;
+	document.getElementById("outputDiv3").innerHTML = info3;
+	
+	// Inheritance example
+	
+	function child(name, age) {
+		this.name = name;
+		this.age = age;
+	}
+	
+	child.prototype = new person
+}
+
+// Still need example of inheritance
+</script>
+	<h1>Object-oriented examples</h1>
+	<h2>Object creation function</h2>
+		<div id="outputDiv">
+			This will become a place for info about me.
+		</div>
+		<div id="outputDiv2">
+			This will become a place for info about Bob.
+		</div>
+		<div id="outputDiv3">
+			This will become a place for info about Jake.
+		</div>
+		<div id="output4">
+			Here is the text for an example of inheritance.
+		</div>
+		<button type="button" onclick="names()">Click me</button>
+</body>
+</html>
