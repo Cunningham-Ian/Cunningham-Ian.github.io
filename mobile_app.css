@@ -1,18 +1,129 @@
+body {
+	font-size: 20px;
+}
+
+@keyframes newSkew {
+	0% {
+		transform: skewX(180deg);
+	}
+	100% {
+		transform: skewX(0deg);
+	}
+}
+
+@keyframes recolor {
+	0% {
+		color: blue;
+	}
+	50% {
+		color: greenyellow;
+	}
+	100% {
+		color: blue;
+	}
+}
+
+@keyframes recolor2 {
+	0% {
+		color: brown;
+	}
+	50% {
+		color: brown;
+	}
+	100% {
+		color: brown;
+	}
+}
+
 #greeting {
 	color: coral;
-	transform: scale(1.1,1.1);
-	font-weight: 110;
+	font-weight: 110px;
+	transform: scale(1.2
+	);
+	animation-name: newSkew;
+	animation-duration: 1s;
+}
+
+button:hover {
+	background-color: chartreuse;
+}
+
+#input1, #input2 {
+	transition: transform 1s;
+}
+
+#input1:focus, #input2:focus {
+	transform: rotate3d(10 10 10);
 }
 
 #question {
+/*	transform: rotateX(90deg);*/
+	color: blue;
+	animation: recolor 1s linear 2s;
+	margin-top: 20px;
+	top: 100px;
+/*
+	transition-delay: 2s;
+	transition-duration: 1s;
+*/
 	
 }
 
+
+
+#question2 {
+/*	transform: rotateX(90deg);*/
+	color: brown;
+	animation: recolor 1s linear 2s;
+/*
+	transition-delay: 2s;
+	transition-duration: 1s;
+*/
+	
+}
+
+form input {
+	transition: transform .5s;
+}
+
+form input:hover, input:focus {
+	transform: scale(1.2);
+}
+
+#input1, #input2, #request {
+	transition: transform .5s;
+}
+
+#input1:focus, #input2:focus, #request:focus {
+	transform: scale(1.05);
+}
+
+/*
+#question:hover {
+	transform: rotateX(0deg);
+}
+*/
+
 #response {
-	transition: scale 1s;
+	
 }
 
+/*
 #response:select {
-	transform: scale(2,1.5)
+	transform: scale(1);
+}
+*/
+
+
+#btn2 {
+/*	display: none;*/
 }
 
+#question2: {
+	
+}
+
+/*
+#overallData, #display {
+	display: none;
+}*/
