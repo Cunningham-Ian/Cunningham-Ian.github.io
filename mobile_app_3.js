@@ -85,12 +85,11 @@ document.getElementById("btn3").addEventListener("click", function () {
 
 function getData(type) {
 	if (typeof (Storage) !== "undefined") {
-		var xhr = new XMLHttpRequest();
-		xhr.onreadystatechange = function showData() {
-			if (this.readyState == 4 && this.status == 200) {
-				document.getElementById("overallData").style.display = "none";
+		function parse() {
+		document.getElementById("overallData").style.display = "none";
 				if	(type == "conditions") {
 					document.getElementById("conditions").style.display = "block";
+					document.getElementById("")
 					
 				} else if (type == "forecast") {
 				document.getElementById("forecast").style.display = "block";
@@ -100,6 +99,7 @@ function getData(type) {
 				
 			}
 			}
+	}
 			if	(localStorage.getItem("data_type") == "conditions") {
 				var api = "conditions";
 			} else if (localStorage.getItem("data_type") == "forecast") {
@@ -114,8 +114,7 @@ function getData(type) {
 			} else {
 				var place = localStorage.getItem("input1") + "," + localStorage.getItem("input2");
 			}
-//			xhr.open("GET", "https://api.wunderground.com/api/0374d8d7218313b5/geolookup/" + api + "/q/" + place + ".json&callback=?", "true");
-//			xhr.send();
+			document.getElementById("jsonScr").setAttribute("src", "https://api.wunderground.com/api/0374d8d7218313b5/geolookup/" + api + "/q/" + place + ".json?callback=parse");
 		}
 		/*
 			If #data_type is conditions,
@@ -141,12 +140,8 @@ function getData(type) {
 			If data type is hourly,
 			Similar to forecast
 		*/
-		xhr.open("GET", "http://api.wunderground.com/api/0374d8d7218313b5/" + localStorage.getItem("option") + "/q/" + localStorage.getItem("data_type") + "");
+		
 		xhr.send();
-	}
-
-}
-
 		// A function for changing a string to TitleCase
 	function toTitleCase(str) {
 		return str.replace(/\w+/g, function (txt) {
