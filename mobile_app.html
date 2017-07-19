@@ -6,16 +6,18 @@
 		<meta description="Mobile app for retrieving weather data from the desired location">
 		<link rel="stylesheet" type="text/css" href="mobile_app.css" media="screen">
 	</head>
-	
+		
 	<body>
+		<header id="greeting">Hello!</header>
+		<main>
 		<section id="location">
-		<div id="greeting">Hello!</div>
 		<p id="question">
 			Which location type would you like to find results for?
 		</p>
+			<p id="instruct">(Choose an option, then hit "Select")</p>
 		<form>
 		<input type="radio" name="search-option" value="zip">Zip Code<br>
-			<input type="radio" name="search-option" value="city">City, State/Country (some locations)<br>
+			<input type="radio" name="search-option" value="city" id="city">City, State (City, Country if outside US)<br>
 			<input type="radio" name="search-option" value="lat+lon" id="lat,lon">Latitude, Longitude<br>
 <!--			<input type="radio" name="search-option" value="station"> Weather Station<br>-->
 		</form>
@@ -24,25 +26,25 @@
 			<button type="button" id="btn2">Submit</button>
 		</section>
 		<section id="overallData">
-			<p id="question1">
+			<p id="question2">
 			Which type of data would you like to look up?  Type "conditions", "forecast", or "hourly".
 		</p>
 			
-		<input type="text" name="data_request">
+		<input type="text" name="data_request" id="request">
 			<button type="button" id="btn3">Submit</button>
 		</section>
-
 		<section id="display">
 			<div id="conditions">
 			<h2>Conditions</h2>
+				<img id="currConPic" alt="Picture of Current Conditions">
 				<p id="curr_con">Current Condition: </p>
 <!--				<p id="curr_temp">Temperature:</p>-->
 			<p id="curr_feel">Feels like: </p>
 				<p id="curr_p">Precipitation: </p>
 			<p id="hi/low">Hi/Low: </p>
 				</div>
-			<div id="forecast">
-			<h2>Forecast (10 days)</h2>
+			<div id="forecastDiv">
+			<h2>Forecast</h2>
 			<!-- ***********************
 			Consider creating in JS file:
 			In first row, create blank space
@@ -59,19 +61,18 @@
 			</table>
 			</div>
 			
-			<div id="hourly">
+			<div id="hourlyDiv">
 			<h2>Hourly</h2>
 				<table id="hourly">
 				</table>
 			</div>
 		</section>
-		
+		</main>
+		<footer>
 		<a href="mobile_app.html">Start over</a>
-		<article id="results"></article>
-		<script src="mobile_app_3.js"></script>
-		<img id="logo" src="wulogo_rev.png">
+		<script src="mobile_app.js"></script>
+		<script id="jsonScr" type="application/javascript"></script>
+		<img id="logo" src="wundergroundLogo_4c.jpg" width="150px">
+			</footer>
 	</body>
-	<footer>
-		
-	</footer>
 </html>
