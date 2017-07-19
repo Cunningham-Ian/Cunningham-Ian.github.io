@@ -44,8 +44,14 @@ body {
 	animation-duration: 1s;
 }
 
-button:hover {
+#btn1:hover {
 	background-color: chartreuse;
+}
+
+#btn2:hover, #btn3:hover {
+	background-color: bisque;
+	transform: scale(1.05);
+	
 }
 
 #input1, #input2 {
@@ -59,7 +65,7 @@ button:hover {
 #question {
 /*	transform: rotateX(90deg);*/
 	color: blue;
-	animation: recolor 1s linear 2s;
+	animation: recolor 2s linear 1s;
 	margin-top: 20px;
 	top: 100px;
 /*
@@ -74,7 +80,7 @@ button:hover {
 #question2 {
 /*	transform: rotateX(90deg);*/
 	color: brown;
-	animation: recolor 1s linear 2s;
+/*	animation: recolor 1s linear 2s;*/
 /*
 	transition-delay: 2s;
 	transition-duration: 1s;
@@ -88,6 +94,7 @@ form input {
 
 form input:hover, input:focus {
 	transform: scale(1.2);
+	background-color: aliceblue;
 }
 
 #input1, #input2, #request {
@@ -98,11 +105,11 @@ form input:hover, input:focus {
 	transform: scale(1.05);
 }
 
-/*
+
 #question:hover {
-	transform: rotateX(0deg);
+	color: blueviolet;
 }
-*/
+
 
 #response {
 	
@@ -115,15 +122,48 @@ form input:hover, input:focus {
 */
 
 
-#btn2 {
-/*	display: none;*/
+#btn2, #btn3 {
+	transition: color 1s, transform 1s;
 }
 
 #question2: {
 	
 }
 
+@keyframes wobble {
+	0% {
+		transform: translateY(2%);
+	}
+	20% {
+		transform: translateY(-4%);
+	}
+	40% {
+		transform: translateY(6%);
+	}
+	60% {
+		transform: translateY(-4%);
+	}
+	80% {
+		transform: translateY(2%);
+	}
+	100% {
+		transform: translateY(0%);
+	}
+}
+
+#instruct {
+	animation-name: wobble;
+	animation-delay: 7s;
+	animation-duration: 5s;
+	animation-iteration-count: infinite;
+}
+
 /*
 #overallData, #display {
 	display: none;
 }*/
+
+footer {
+	display: flex;
+	height: 100px;
+}
